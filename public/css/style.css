@@ -1,0 +1,31 @@
+>custom-navbar {
+    background-color: #1e2a38;
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    font-size: 20 px;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: aqua;
+    margin: 0 10 px;
+    transition: 0.3s;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* Optional tambahan biar lebih keren */
+.card img {
+    height: 180px;
+    object-fit: cover;
+}
