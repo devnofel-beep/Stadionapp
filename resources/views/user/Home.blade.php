@@ -4,8 +4,9 @@
 
 <!-- HERO -->
 <div class="bg-dark text-white text-center py-5">
-    <h1>Pesan Tiket Stadion</h1>
-    <p>Mudah, Cepat, & Aman</p>
+
+    <h1 class="display-4 fw-bold">Pesan Tiket Stadion</h1>
+    <p class="lead mb-4">Mudah, Cepat, & Aman setiap pertandingan favoritmu</p>
 </div>
 
 <!-- 🎟️ REKOMENDASI EVENT -->
@@ -147,10 +148,6 @@
 
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
 

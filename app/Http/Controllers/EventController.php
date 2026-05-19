@@ -16,13 +16,22 @@ class EventController extends Controller
         
     public function store(Request $request)
     {
+         // upload banner
+        $bannerName = null;
+
+        if ($request->hasFile('banner')){
+            $banner = $request->file('banner');
+            $bannerName = time() . '.' . $banner->extension();
+            $banner->move(public_path('img'), $bannerName);
+        }
+
         Event::create([
 
             'nama_event' => $request->nama_event,
             'deskripsi' => $request->deskripsi,
             'tanggal' => $request->tanggal,
             'jam' => $request->jam,
-            'banner' => $request->banner,
+            'banner' => $bannerName,
             'status' => $request->status,
 
         ]);
