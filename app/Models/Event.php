@@ -25,4 +25,13 @@ class Event extends Model
         'status'
 
     ];
+
+    public function tickets()
+    {
+        return $this->hasMany(
+            Ticket::class,
+            'id_event',
+            'id_event'
+        );
+    }
 }

@@ -15,61 +15,40 @@
         <h3>Rekomendasi Event</h3>
     </div>
 
-    <div class="row g-4">
+        <div class="row g-4">
 
-        <!-- CARD EVENT -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
+            @foreach($events as $event)
 
-                <img src="{{ asset('img/konser-musik.jpg') }}" class="card-img-top">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
 
-                <div class="card-body">
-                    <h5 class="card-title">Final Liga Indonesia</h5>
-                    <p class="text-muted">15 Juni 2026</p>
+                        <img src="{{ asset('img/' . $event->banner) }}"
+                            class="card-img-top">
 
-                    <a href="{{ url('/event') }}" class="btn btn-primary w-100">
-                        Lihat Detail
-                    </a>
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                {{ $event->nama_event }}
+                            </h5>
+
+                            <p class="text-muted">
+                                {{ $event->tanggal }}
+                            </p>
+
+                            <a href="{{ url('/event/' . $event->id) }}"
+                            class="btn btn-primary w-100">
+
+                                Lihat Detail
+                            </a>
+
+                        </div>
+                    </div>
                 </div>
 
-            </div>
+            @endforeach
+
         </div>
 
-        <!-- CARD EVENT -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-
-                <img src="{{ asset('img/konser-musik.jpg') }}" class="card-img-top">
-
-                <div class="card-body">
-                    <h5 class="card-title">Final Liga Indonesia</h5>
-                    <p class="text-muted">15 Juni 2026</p>
-
-                    <a href="{{ url('/event') }}" class="btn btn-primary w-100">
-                        Lihat Detail
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- CARD EVENT -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-
-                <img src="{{ asset('img/konser-musik.jpg') }}" class="card-img-top">
-
-                <div class="card-body">
-                    <h5 class="card-title">Final Liga Indonesia</h5>
-                    <p class="text-muted">15 Juni 2026</p>
-
-                    <a href="{{ url('/event') }}" class="btn btn-primary w-100">
-                        Lihat Detail
-                    </a>
-                </div>
-
-            </div>
-        </div>
     </div>
 
     <!-- 🛍️ REKOMENDASI MERCH -->

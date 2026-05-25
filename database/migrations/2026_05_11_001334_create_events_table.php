@@ -22,6 +22,7 @@ return new class extends Migration
             $table->enum('status', ['aktif','selesai'])
                   ->default('aktif');
             $table->timestamps();
+            $table->string('kategori');
         });
     }
 
