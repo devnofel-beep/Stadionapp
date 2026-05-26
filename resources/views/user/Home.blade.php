@@ -70,7 +70,7 @@
                         <p class="fw-bold text-primary">Rp 250.000</p>
 
                         <button class="btn btn-success w-100">
-                            Beli
+                            lihat selengkapnya
                         </button>
                     </div>
 
@@ -87,7 +87,7 @@
                         <p class="fw-bold text-primary">Rp 250.000</p>
 
                         <button class="btn btn-success w-100">
-                            Beli
+                            lihat selengkapnya
                         </button>
                     </div>
 
@@ -104,7 +104,7 @@
                         <p class="fw-bold text-primary">Rp 250.000</p>
 
                         <button class="btn btn-success w-100">
-                            Beli
+                            lihat selengkapnya
                         </button>
                     </div>
 
@@ -121,7 +121,7 @@
                         <p class="fw-bold text-primary">Rp 250.000</p>
 
                         <button class="btn btn-success w-100">
-                            Beli
+                            lihat selengkapnya
                         </button>
                     </div>
 

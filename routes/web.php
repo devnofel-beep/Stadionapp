@@ -76,3 +76,9 @@ Route::post('/admin/event/update/{id}',
 
 Route::get('/admin/event/delete/{id}',
     [EventController::class, 'destroy']);
+
+Route::get('/pembayaran', function () {
+
+    return view('pembayaran');
+
+})->middleware('auth');
