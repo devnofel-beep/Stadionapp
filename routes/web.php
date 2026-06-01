@@ -54,7 +54,48 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
 
 Route::get('/home', [UserController::class, 'home']);
 Route::get('/event/{id}', [UserController::class, 'detail']);
-Route::get('/event/{id}/tickets', [UserController::class, 'tickets']);
+
+Route::get(
+    '/event/{id}/tribun',
+    [UserController::class, 'halamanTribun']
+);
+
+Route::get(
+    '/event/{id}/tribun/{zona}',
+    [UserController::class, 'pilihBlok']
+);
+
+Route::get(
+    '/event/{id}/tribun/{zona}/blok/',
+    [UserController::class, 'pilihBlok']
+);
+
+Route::get(
+    '/event/{id}/tribun/{zona}/blok/{blok}',
+    [UserController::class, 'pilihKursi']
+);
+
+Route::get(
+    '/checkout/{zona}/{blok}',
+    [UserController::class, 'Checkout']
+);
+
+// 1. Tombol 'Beli Tiket' mengarah ke halaman Pilih Kategori
+//Route::get('/event/{id}/kategori', [UserController::class, 'pilihKategori']);
+
+//Route::get('/event/{id}/kategori/{kategori}/tribun',[UserController::class, 'pilihTribun']);
+
+// 2. Setelah pilih Kategori, masuk ke halaman Pilih Tribun
+//Route::get('/event/{id}/kategori/{kategori}/seats', [UserController::class, 'pilihKursi']);
+
+// 3. Setelah pilih Tribun, masuk ke halaman Pilih Kursi (Seat Map)
+//Route::get('/event/{id}/tribun/{id_tiket}/seats', [UserController::class, 'pilihKursi']);
+
+//Route::get('/event/{id}/tribun/{id_ticket}/seats', [UserController::class, 'pilihKursi']);
+
+//Route::get('/event/{id}/tickets', [UserController::class, 'tickets']);
+//Route::get('/event/{id}/tribun',[UserController::class, 'pilihTribun']);
+//Route::get('/event/{id}/seats/{ticket_id}', [App\Http\Controllers\UserController::class, 'pilihKursiSpesifik']);
 
 
 Route::get('/register', [AuthController::class, 'showRegister']);

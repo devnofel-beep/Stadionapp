@@ -35,7 +35,7 @@
                                 {{ $event->tanggal }}
                             </p>
 
-                            <a href="{{ url('/event/' . $event->id) }}"
+                            <a href="{{ url('/event/' . $event->id_event) }}"
                             class="btn btn-primary w-100">
 
                                 Lihat Detail

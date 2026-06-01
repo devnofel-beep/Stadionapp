@@ -15,7 +15,7 @@
 
     <p><strong>Jam:</strong> {{ $event->jam }}</p>
 
-    <a href="{{ url('/event/'.$event->id.'/tickets') }}" class="btn btn-primary">
+    <a href="{{ url('/event/'.$event->id_event.'/tribun') }}" class="btn btn-primary">
         Beli Tiket
     </a>
 

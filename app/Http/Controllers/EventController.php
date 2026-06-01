@@ -39,9 +39,9 @@ class EventController extends Controller
         return redirect('/admin/dashboard');
     }
 
-    public function edit($id)
+    public function edit($id_event)
     {
-        $event = Event::findOrFail($id);
+        $event = Event::findOrFail($id_event);
 
         return view(
             'admin.edit-event',

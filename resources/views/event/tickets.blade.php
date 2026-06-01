@@ -20,16 +20,16 @@
 
                     <h4>
                         {{ strtoupper($ticket->kategori) }}
-                    </h4>
+                    </h4>      
 
                     <p>
                         Zona:
                         {{ $ticket->nama_zona }}
                     </p>
-
+ 
                     <p>
                         Gate:
-                        {{ $ticket->gate }}
+                        {{ $ticket->gate }}   
                     </p>
 
                     <h5 class="text-primary">
@@ -41,12 +41,16 @@
                         {{ $ticket->kuota }}
                     </p>
 
-                    <button class="btn btn-primary w-100">
+                    <a href="{{ url('/event/'.$event->id.'/seats/'.$ticket->id) }}" class="btn btn-primary w-100">
+                      pilih kursi
+                    </a>
+
+                    <!-- <button class="btn btn-primary w-100">
 
                         Beli Tiket
 
                     </button>
-
+                        -->
                 </div>
 
             </div>
