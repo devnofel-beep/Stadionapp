@@ -76,10 +76,14 @@ Route::get(
 );
 
 Route::get(
-    '/checkout/{zona}/{blok}',
+    '/checkout/{event}/{zona}/{blok}',
     [UserController::class, 'Checkout']
 );
 
+Route::post(
+    '/event/{id}/checkout/confirm',
+    [UserController::class, 'confirmCheckout']
+);
 // 1. Tombol 'Beli Tiket' mengarah ke halaman Pilih Kategori
 //Route::get('/event/{id}/kategori', [UserController::class, 'pilihKategori']);
 

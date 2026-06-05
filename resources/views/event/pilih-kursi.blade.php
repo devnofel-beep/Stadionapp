@@ -2,7 +2,12 @@
 
 @section('content')
 
+<pre>
+    {{ print_r($event) }}
+</pre>
+
 <div class="container mt-5">
+
 
     <h2>Pilih Kursi</h2>
 
@@ -123,7 +128,7 @@
                 Lanjut Checkout
 
             </button> -->
-            <a href="/checkout"
+            <a href="/Checkout"
                 id="btnCheckout"
                 class="btn btn-success disabled">
 
@@ -131,6 +136,8 @@
             </a>
 
     </div>
+
+    <h1>ID EVENT: {{ $event->id_event }}</h1>
 
 <script>
 
@@ -234,7 +241,8 @@
     
     const zona = "{{ $zona }}";
     const blok = "{{ $blok }}";
-
+    const eventId = "{{ $event->id_event }}";
+    console.log('eventId=', eventId);
     function updateInfo()
     {
         seatInfo.innerText =
@@ -249,12 +257,12 @@
         btnCheckout.classList.remove('disabled');
 
             btnCheckout.href =
-                `/checkout/${zona}/${blok}`
+                `/checkout/${eventId}/${zona}/${blok}`
                 + '?kursi='
                 + selectedSeats.join(',')
                 + '&jumlah='
                 + jumlah;
-                
+
             console.log(btnCheckout.href);
         }
         else

@@ -27,21 +27,21 @@
                     <span class="badge bg-success">
                         Umum
                     </span>
-                    Rp50.000
+                    Rp500.000
                 </div>
 
                 <div>
                     <span class="badge bg-warning text-dark">
                         VIP
                     </span>
-                    Rp150.000
+                    Rp1.000.000
                 </div>
 
                 <div>
                     <span class="badge bg-danger">
                         VVIP
                     </span>
-                    Rp300.000
+                    Rp2.000.000
                 </div>
 
             </div>

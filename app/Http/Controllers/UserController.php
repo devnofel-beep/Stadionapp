@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Ticket;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -161,11 +163,81 @@ class UserController extends Controller
         );
     }
 
-    public function Checkout($zona,$blok)
+    public function checkout($event,$zona,$blok)
     {
-        return view('event.Checkout',
-        compact('zona','blok'));
+        $event = Event::findOrFail($event);
+        
+        $kursi = request('kursi');
+        $jumlah=request('jumlah');
+
+
+        if(
+            $zona == 'utara' ||
+            $zona == 'selatan' ||
+            $zona == 'timur'
+        ){
+            $hargaPerTiket = 500000;
+        }
+        elseif($zona == 'vipbarat')
+        {
+            $hargaPerTiket = 1000000;
+        }
+        elseif($zona == 'vvipbarat')
+        {
+            $hargaPerTiket = 2000000;
+        }
+        else
+        {
+            $hargaPerTiket = 0;
+        }
+
+        $totalHarga = $jumlah * $hargaPerTiket;
+
+
+        // $hargaPerTiket = request('harga_per_tiket');
+        // $totalHarga = $jumlah * $hargaPerTiket;
+        return view('event.checkout',
+        compact('event','zona','blok','kursi','jumlah','hargaPerTiket','totalHarga'));
     }
+
+    public function confirmCheckout(
+            Request $request,
+            $id
+        )
+        {
+            Order::create([
+
+                'id_user' =>
+                    Auth::user()->id_user,
+
+                'id_event' =>
+                    $id,
+
+                'tribun' =>
+                    $request->zona,
+
+                'blok' =>
+                    $request->blok,
+
+                'kursi' =>
+                    $request->kursi,
+
+                'jumlah' =>
+                    $request->jumlah,
+
+                'total_harga' =>
+                    $request->total_harga,
+
+                'status' =>
+                    'pending'
+            ]);
+
+            return redirect('/')
+                    ->with(
+                        'success',
+                        'Pesanan berhasil dibuat'
+                    );
+        }
 
     // LANGKAH 3: HALAMAN PILIH KURSI / SEAT MAP
     // public function pilihKursi($id, $id_tiket)
